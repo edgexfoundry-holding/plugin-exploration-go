@@ -1,0 +1,79 @@
+//
+// Copyright (c) 2019 Intel Corporation
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//      http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+//
+
+syntax = "proto3";
+package proto;
+
+
+message GetResponse {
+    string message = 1;
+}
+
+message PutRequest {
+    string message = 1;
+}
+
+message DoCheckResponse {
+    bool  check = 1;
+}
+
+message ThisIsItRequest {
+    string message = 1;
+}
+
+message WaitForItRequest {
+      uint32 it_server = 1;
+}
+
+message Empty {}
+
+message Person {
+	string name = 1;
+	int32  age = 2;
+	double salary = 3;
+}
+
+message SetPersonRequest {
+    Person person = 1;
+}
+
+message SetPersonResponse {
+    int32 id = 1;
+}
+
+message GetPersonResponse  {
+    Person person = 1;
+}
+
+message GetPersonRequest {
+    int32 id = 1;
+}
+
+service Foo {
+    rpc Get(Empty) returns (GetResponse);
+    rpc Put(PutRequest) returns (Empty);
+    rpc DoCheck(Empty) returns (DoCheckResponse);
+    rpc Close(Empty) returns (Empty);
+    rpc WaitForIt(WaitForItRequest) returns (Empty);
+    rpc SetPerson(SetPersonRequest) returns (SetPersonResponse);
+    rpc GetPerson(GetPersonRequest) returns (GetPersonResponse);
+}
+
+service It {
+    rpc ThisIsIt(ThisIsItRequest) returns (Empty);
+}
+
+
