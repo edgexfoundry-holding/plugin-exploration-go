@@ -1,0 +1,7 @@
+*~
+*.log
+.idea
+go.sum
+my-plugin/grpc/grpc
+my-plugin/rpc/rpc
+my-service/my-service
