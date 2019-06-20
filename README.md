@@ -1,5 +1,6 @@
 # plugin-exploration-go
 
-This is a play ground for exploring plugins. 
+This is a playground for exploring plugins. 
 
-Checkout the README in the hashicorp for details of that exploration
+Checkout the README in the HashiCorp for details of that exploration
+
